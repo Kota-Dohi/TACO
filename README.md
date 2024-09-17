@@ -124,7 +124,7 @@ Assigned to time-series data that has a convex or concave shape. Score calculati
 
 #### Periodic & Aperiodic:
 1. Fit a Linear Function:    
-    - Fit a linear function to the original signal and calculate the fitting error by the MSE ('mse_linear').  
+    - Fit a linear function to the original signal and calculate the fitting error by the MSE (`mse_linear`).  
   
 2. Create a Periodic Curve:    
     - Calculate the autocorrelation coefficient for the original signal.  
@@ -132,10 +132,10 @@ Assigned to time-series data that has a convex or concave shape. Score calculati
     - Create a periodic signal by treating the segment up to the peak point as one complete cycle and then repeating this cycle.  
   
 3. Calculate the Error of the Periodic Curve:    
-    - Calculate the fitting error between the periodic curve and the original signal ('mse_periodic').  
+    - Calculate the fitting error between the periodic curve and the original signal (`mse_periodic`).  
   
 4. Compare the Errors:
-    - Subtract the 'mse_linear' from the 'mse_periodic'.
+    - Subtract the `mse_linear` from the `mse_periodic`.
     - If the value is smaller than **0.01**, the time-series data is assigned the class "Periodic". If the value is larger than **0.01**, the time-series data is assigned the class "Aperiodic".
   
 
@@ -150,7 +150,7 @@ Assigned to time-series data that has a convex or concave shape. Score calculati
 3. Calculate Errors:    
     - For each pair of padded original data and its flipped signal, calculate the maximum error between them.  
   
-4. Find Minimum Errors:    
+4. Find Minimum Errors among Padded Signals:    
     - Calculate the minimum error among the errors calculated for each pair.
     - If the minimum error is smaller than **0.15**, the time-series data is assigned the class "Symmetry". If the value is larger than **0.70**, the data is assigned the class "Asymmetry".
   
@@ -170,7 +170,7 @@ Assigned to time-series data that has a convex or concave shape. Score calculati
 #### High amplitude & Low amplitude:
 1. Split the Time-Series Data into Segments:  
     - The window size is one-third of the length of the time-series data.  
-    - The stride length is **2.5% **of the length of the time-series data.  
+    - The stride length is **2.5%** of the length of the time-series data.  
   
 2. Calculate Variance for Each Segment:  
     - For each segment, calculate the variance.  
